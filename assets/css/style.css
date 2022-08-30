@@ -30,6 +30,10 @@
     padding: 10px;
 }
 
+#weather-today img {
+    display: inline;
+}
 ul {
     list-style-type:none;
 }
+

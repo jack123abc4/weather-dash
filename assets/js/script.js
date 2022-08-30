@@ -2,6 +2,8 @@
 var inputField = document.querySelector("input");
 var searchButton = document.querySelector("#search-button");
 var apiKey = "c24e52e168e5f1762f6e0f549f58fee4";
+
+
 //coordinatesURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + "" + "&appid={API key}";
 
 async function getCoordinates(cityName) {
@@ -45,9 +47,15 @@ async function getCurrentWeather(lat,lon) {
         var temp = data.main.temp;
         var wind = data.wind.speed;
         var humidity = data.main.humidity;
+        var today = moment();
         // var uvIndex = 
         weatherTodayHeader = weatherToday.querySelector("h2");
-        weatherTodayHeader.textContent = data.name;
+        weatherTodayHeader.textContent = data.name + " " + today.format("(L)");
+        console.log(data.weather);
+        console.log(data.weather[0]);
+        console.log(data.weather[0].icon);
+        console.log(document.querySelector("#weather-icon"));
+        document.querySelector("#weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/"+ data.weather[0].icon + "@2x.png")
 
         weatherTodayList = weatherToday.querySelector("ul");
         $(weatherTodayList).children()[0].textContent = "Temp: " + temp + "°F";
