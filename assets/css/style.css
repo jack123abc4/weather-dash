@@ -1,1 +1,25 @@
-/* stylesheet */
+
+.container {}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
+
+.button {
+    display:block;
+    margin:10px;
+    text-align: center;
+    justify-content:center;
+    width:auto;
+    padding:25px;
+    
+}
+
+.input {
+    margin:25px;
+    padding: 25px;
+}
