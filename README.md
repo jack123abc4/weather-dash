@@ -10,7 +10,7 @@ N/A
 
 ## Usage
 
-This program can be used in the user's browser. When loaded, the user can input into the search bar the desired city and the resulting current weather and five-day forecast will be displayed. When a user inputs a search, their history is displayed on-screen and previous searches can be returned to at any time. This serach history will persist to the next session.
+This program can be used in the user's browser. When loaded, the user can input into the search bar the desired city and the resulting current weather and five-day forecast will be displayed. When a user inputs a search, their history is displayed on-screen and previous searches can be returned to at any time. This search history will persist to the next session.
 
 ![screenshot1](https://user-images.githubusercontent.com/15790800/187343851-0e1ad5d3-a25e-46f8-a65b-0ea4b1e4d27b.PNG)
 
