@@ -1,6 +1,7 @@
 
 var inputField = document.querySelector("input");
 var searchButton = document.querySelector("#search-button");
+var searchHistory = document.querySelector("#search-history");
 var apiKey = "c24e52e168e5f1762f6e0f549f58fee4";
 
 
@@ -111,12 +112,25 @@ async function getForecastedWeather(lat,lon) {
     });
 }
 
-
-
-
+function addToHistory(cityName) {
+    var historyButton = document.createElement("button");
+    historyButton.classList.add("btn", "btn-secondary","block", "col-12");
+    historyButton.setAttribute("id", "history-button");
+    historyButton.textContent = cityName;
+    searchHistory.appendChild(historyButton);
+}
 
 searchButton.addEventListener("click", function() {
     console.log(inputField.value);
+    
     getCoordinates(inputField.value);
+    addToHistory(inputField.value);
 
+})
+
+searchHistory.addEventListener("click", function(event) {
+    if (event.target.getAttribute("id") === "history-button") {
+        console.log(event.target.textContent);
+        getCoordinates(event.target.textContent);
+    }
 })

@@ -18,8 +18,11 @@
         <div class="row">
             <div id="search-col" class="col-3">
                 <h2>Search for a City:</h2>
-                <input type="text" class="col-9" id="search-field">
-                <button class="btn btn-primary block col-9" id="search-button">Search</button>
+                <input type="text" class="col-12" id="search-field">
+                <button class="btn btn-primary block col-12" id="search-button">Search</button>
+                <div id="search-history">
+                    <!-- history buttons -->
+                </div>
             </div>
             <div id="results-col" class="col-9">
                 <section id="weather-today">
@@ -41,7 +44,7 @@
 
                 <h3>5-day Forecast:</h3>
                 <section class="row" id="five-day-forecast">
-                    <div class="col-2 forecast-card">
+                    <div class="col-sm forecast-card">
                         <!-- tomorrow -->
                         <h3 id="date"></h3>
                         <img id="weather-icon">
@@ -57,7 +60,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-2 forecast-card">
+                    <div class="col-sm forecast-card">
                         <!-- two days -->
                         <h3 id="date"></h3>
                         <img id="weather-icon">
@@ -73,7 +76,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-2 forecast-card">
+                    <div class="col-sm forecast-card">
                         <!-- three days -->
                         <h3 id="date"></h3>
                         <img id="weather-icon">
@@ -89,7 +92,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-2 forecast-card">
+                    <div class="col-sm forecast-card">
                         <!-- four days -->
                         <h3 id="date"></h3>
                         <img id="weather-icon">
@@ -105,7 +108,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-2 forecast-card">
+                    <div class="col-sm forecast-card">
                         <!-- five days -->
                         <h3 id="date"></h3>
                         <img id="weather-icon">
