@@ -37,3 +37,10 @@ ul {
     list-style-type:none;
 }
 
+.forecast-card {
+    background-color: rgb(8, 45, 100);
+    color:white;
+    margin: 5px;
+    width:auto;
+}
+
