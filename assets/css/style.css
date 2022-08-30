@@ -33,8 +33,10 @@
 #weather-today img {
     display: inline;
 }
+
 ul {
     list-style-type:none;
+    padding-left: 0;
 }
 
 .forecast-card {

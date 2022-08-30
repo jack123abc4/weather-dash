@@ -84,11 +84,23 @@ async function getForecastedWeather(lat,lon) {
         var forecastIndex = 0;
         var forecastSection = document.querySelector("#five-day-forecast");
         for (var i = 0; i < data.list.length; i++) {
-            var forecastDate = data.list[i].dt_txt.split(" ")[0];
-            var forecastTime = data.list[i].dt_txt.split(" ")[1];
+            var forecast = data.list[i];
+            var forecastDate = forecast.dt_txt.split(" ")[0];
+            var forecastTime = forecast.dt_txt.split(" ")[1];
             console.log(forecastDate,forecastTime);
             if (forecastTime === "12:00:00") {
-                $(forecastSection).children()[forecastIndex].querySelector("h3").textContent = forecastDate;
+                var forecastCard = $(forecastSection).children()[forecastIndex];
+                forecastCard.querySelector("h3").textContent = forecastDate;
+
+                forecastCard.querySelector("#weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/"+ forecast.weather[0].icon + "@2x.png")
+                
+                var forecastList = forecastCard.querySelector("ul");
+                var temp = forecast.main.temp;
+                var wind = forecast.wind.speed;
+                var humidity = forecast.main.humidity;
+                $(forecastList).children()[0].textContent = "Temp: " + temp + "°F";
+                $(forecastList).children()[1].textContent = "Wind: " + wind + "MPH";
+                $(forecastList).children()[2].textContent = "Humidity: " + humidity + "%";
                 forecastIndex++;
             }
         }
