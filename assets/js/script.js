@@ -8,7 +8,7 @@ var apiKey = "c24e52e168e5f1762f6e0f549f58fee4";
 //coordinatesURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + "" + "&appid={API key}";
 
 async function getCoordinates(cityName) {
-    var coordinatesURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey;
+    var coordinatesURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey;
     console.log(coordinatesURL);
     fetch(coordinatesURL, {
         method: 'GET', //GET is the default.
@@ -56,7 +56,7 @@ async function getCurrentWeather(lat,lon) {
         console.log(data.weather[0]);
         console.log(data.weather[0].icon);
         console.log(weatherToday.querySelector("#weather-icon"));
-        weatherToday.querySelector("#weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/"+ data.weather[0].icon + "@2x.png")
+        weatherToday.querySelector("#weather-icon").setAttribute("src", "https://openweathermap.org/img/wn/"+ data.weather[0].icon + "@2x.png")
 
         weatherTodayList = weatherToday.querySelector("ul");
         $(weatherTodayList).children()[0].textContent = "Temp: " + temp + "°F";
@@ -93,7 +93,7 @@ async function getForecastedWeather(lat,lon) {
                 var forecastCard = $(forecastSection).children()[forecastIndex];
                 forecastCard.querySelector("h3").textContent = forecastDate;
 
-                forecastCard.querySelector("#weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/"+ forecast.weather[0].icon + "@2x.png")
+                forecastCard.querySelector("#weather-icon").setAttribute("src", "https://openweathermap.org/img/wn/"+ forecast.weather[0].icon + "@2x.png")
                 
                 var forecastList = forecastCard.querySelector("ul");
                 var temp = forecast.main.temp;
@@ -105,7 +105,6 @@ async function getForecastedWeather(lat,lon) {
                 forecastIndex++;
             }
         }
-        addToHistory()
         return data;
     })
     .catch(function(error) {
@@ -123,9 +122,11 @@ function addToHistory(cityName) {
 
 searchButton.addEventListener("click", function() {
     console.log(inputField.value);
+    if (inputField.value.trim() !== "") {
+        getCoordinates(inputField.value);
+        addToHistory(inputField.value);
+    }   
     
-    getCoordinates(inputField.value);
-    addToHistory(inputField.value);
 
 })
 
