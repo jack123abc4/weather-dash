@@ -105,6 +105,7 @@ async function getForecastedWeather(lat,lon) {
                 forecastIndex++;
             }
         }
+        addToHistory()
         return data;
     })
     .catch(function(error) {
