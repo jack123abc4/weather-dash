@@ -3,6 +3,7 @@ var inputField = document.querySelector("input");
 var searchButton = document.querySelector("#search-button");
 var searchHistory = document.querySelector("#search-history");
 var apiKey = "c24e52e168e5f1762f6e0f549f58fee4";
+var searchHistoryIndex = 0;
 
 
 //coordinatesURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + "" + "&appid={API key}";
@@ -118,6 +119,22 @@ function addToHistory(cityName) {
     historyButton.setAttribute("id", "history-button");
     historyButton.textContent = cityName;
     searchHistory.appendChild(historyButton);
+    localStorage.setItem(searchHistoryIndex,cityName);
+    searchHistoryIndex++;
+}
+
+function init(){
+    while (localStorage.getItem(searchHistoryIndex)) {
+        if (localStorage.getItem(searchHistoryIndex) !== "") {
+            var historyButton = document.createElement("button");
+            historyButton.classList.add("btn", "btn-secondary","block", "col-12");
+            historyButton.setAttribute("id", "history-button");
+            historyButton.textContent = localStorage.getItem(searchHistoryIndex);
+            searchHistory.appendChild(historyButton);
+            searchHistoryIndex++;
+        }
+        
+    }
 }
 
 searchButton.addEventListener("click", function() {
@@ -136,3 +153,5 @@ searchHistory.addEventListener("click", function(event) {
         getCoordinates(event.target.textContent);
     }
 })
+
+init();
