@@ -12,7 +12,8 @@ N/A
 
 This program can be used in the user's browser. When loaded, the user can input into the search bar the desired city and the resulting current weather and five-day forecast will be displayed. When a user inputs a search, their history is displayed on-screen and previous searches can be returned to at any time. This serach history will persist to the next session.
 
-![image](https://user-images.githubusercontent.com/15790800/186751168-b60a10f6-f42b-49f2-9fd2-a7a6d34778f7.png)
+![screenshot1](https://user-images.githubusercontent.com/15790800/187343851-0e1ad5d3-a25e-46f8-a65b-0ea4b1e4d27b.PNG)
+
 
 ## Credits
 
@@ -41,7 +42,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-![screenshot1](https://user-images.githubusercontent.com/15790800/185509182-104062e7-e46f-437a-86ad-81e25a2aba73.PNG)
-![screenshot2](https://user-images.githubusercontent.com/15790800/185509273-be4591d1-27cf-4e15-b65d-06dccb2df535.PNG)
-![screenshot3](https://user-images.githubusercontent.com/15790800/185509280-cdba6ada-afe7-4427-b91d-16588975cea8.PNG)
