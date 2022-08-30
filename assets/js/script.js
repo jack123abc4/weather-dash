@@ -30,7 +30,8 @@ async function getCoordinates(cityName) {
 }
 
 async function getCurrentWeather(lat,lon) {
-    var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ lon + "&appid=" + apiKey;
+    var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ lon + "&units=imperial&appid=" + apiKey;
+    var weatherToday = document.querySelector("#weather-today");
     console.log(weatherURL);
     fetch(weatherURL, {
         method: "GET",
@@ -41,6 +42,19 @@ async function getCurrentWeather(lat,lon) {
     })
     .then(function (data) {
         console.log(data);
+        var temp = data.main.temp;
+        var wind = data.wind.speed;
+        var humidity = data.main.humidity;
+        // var uvIndex = 
+        weatherTodayHeader = weatherToday.querySelector("h2");
+        weatherTodayHeader.textContent = data.name;
+
+        weatherTodayList = weatherToday.querySelector("ul");
+        $(weatherTodayList).children()[0].textContent = "Temp: " + temp + "°F";
+        $(weatherTodayList).children()[1].textContent = "Wind: " + wind + "MPH";
+        $(weatherTodayList).children()[2].textContent = "Humidity: " + humidity + "%";
+        
+
         return data;
     })
 }
